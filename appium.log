@@ -1,0 +1,9 @@
+2025-05-24 06:42:11:001 [Appium] Welcome to Appium v2.18.0
+2025-05-24 06:42:11:002 [Appium] The autodetected Appium home path: /Users/rafomanukyan/.appium
+2025-05-24 06:42:11:003 [Appium] Attempting to load driver uiautomator2...
+2025-05-24 06:42:11:003 [Appium] Attempting to load driver xcuitest...
+2025-05-24 06:42:11:004 [Appium] Requiring driver at /Users/rafomanukyan/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2025-05-24 06:42:11:006 [Appium] Requiring driver at /Users/rafomanukyan/.appium/node_modules/appium-xcuitest-driver/build/index.js
+2025-05-24 06:42:11:477 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.474s
+2025-05-24 06:42:11:972 [Appium] XCUITestDriver has been successfully loaded in 0.969s
+2025-05-24 06:42:11:982 [HTTP] Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
