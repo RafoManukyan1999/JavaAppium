@@ -58,7 +58,6 @@ public class Platform {
         caps.setCapability("appActivity", "org.wikipedia.main.MainActivity");
         caps.setCapability("app", getAndroidAppPath());
         caps.setCapability("noReset", false);
-//        caps.setCapability("avd", "and12");
         return caps;
     }
 
