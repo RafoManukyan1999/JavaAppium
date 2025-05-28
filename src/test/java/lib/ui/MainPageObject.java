@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import lib.Platform;
 import static org.junit.jupiter.api.Assertions.fail;
+
 public class MainPageObject {
 
     protected static AppiumDriver driver;
