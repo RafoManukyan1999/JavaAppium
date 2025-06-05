@@ -36,6 +36,7 @@ abstract public class ArticlePageObject extends MainPageObject
     @Step("Clicking on article title")
     public String getArticleTitle() {
         WebElement titleElement = waitForTitleElement("Java (programming language)");
+        screenshot(takeScreenshot("article_title"));
         if (Platform.getInstance().isAndroid()) {
             return titleElement.getText();
         } else {
