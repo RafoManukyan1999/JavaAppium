@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 
 abstract public class SearchPageObject extends MainPageObject {
 
@@ -21,6 +22,7 @@ abstract public class SearchPageObject extends MainPageObject {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
     }
 
+    @Step("Clicking skip button")
     public void clickSkipButton() {
         waitForElementAndClick(
                 SEARCH_SKIP_LINK,
@@ -29,6 +31,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Initializing search input")
     public void initSearchInput() {
         waitForElementAndClick(
                 SEARCH_INIT_ELEMENT,
@@ -42,6 +45,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Waiting for cancel button to appear")
     public void waitForCancelButtonToAppear() {
         waitForElementPresent(
                 SEARCH_CANCEL_BUTTON,
@@ -50,6 +54,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Waiting for cancel button to disappear")
     public void waitForCancelButtonToDisappear() {
         waitForElementNotPresent(
                 SEARCH_CANCEL_BUTTON,
@@ -58,6 +63,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Clicking cancel search button")
     public void clickCancelSearch() {
         waitForElementAndClick(
                 SEARCH_CANCEL_BUTTON,
@@ -66,6 +72,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Typing '{search_line}' into search input")
     public void typeSearchLine(String search_line) {
         waitForElementAndSendKeys(
                 SEARCH_INPUT,
@@ -75,6 +82,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Waiting for search result with substring")
     public void waitForSearchResult(String substring) {
         String search_result_xpath = getResultSearchElement(substring);
         waitForElementPresent(
@@ -84,6 +92,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Clicking on article with substring")
     public void clickByArticleWithSubstring(String substring) {
         String search_result_xpath = getResultSearchElement(substring);
         waitForElementAndClick(
@@ -93,6 +102,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Getting amount of found articles")
     public int getAmountOfFoundArticles() {
         waitForElementPresent(
                 SEARCH_RESULT_ELEMENT,
@@ -104,6 +114,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Waiting for empty results label")
     public void waitForEmptyResultsLabel() {
         waitForElementPresent(
                 SEARCH_EMPTY_RESULT_ELEMENT,
@@ -112,6 +123,7 @@ abstract public class SearchPageObject extends MainPageObject {
         );
     }
 
+    @Step("Asserting there is no result of search")
     public void assertThereIsNoResultOfSearch() {
         assertElementNotPresent(
                 SEARCH_RESULT_ELEMENT,

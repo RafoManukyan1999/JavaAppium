@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.WebElement;
 
@@ -17,13 +18,13 @@ abstract public class ArticlePageObject extends MainPageObject
             MY_LIST_NAME_INPUT,
             ADD_TO_MY_LIST_OK_BUTTON;
 
-
     public ArticlePageObject(AppiumDriver driver)
     {
         super(driver);
     }
 
-    public WebElement waitForTitleElement(String s)
+    @Step("Waiting for title element")
+    public WebElement waitForTitleElement(String substring)
     {
         return waitForElementPresent(
                 TITLE,
@@ -32,6 +33,7 @@ abstract public class ArticlePageObject extends MainPageObject
         );
     }
 
+    @Step("Clicking on article title")
     public String getArticleTitle() {
         WebElement titleElement = waitForTitleElement("Java (programming language)");
         if (Platform.getInstance().isAndroid()) {
@@ -41,6 +43,7 @@ abstract public class ArticlePageObject extends MainPageObject
         }
     }
 
+    @Step("Checking if article title is present")
     public void swipeToFooter()
     {
         swipeUpToFindElement(
@@ -50,6 +53,7 @@ abstract public class ArticlePageObject extends MainPageObject
         );
     }
 
+    @Step("Adding article to my list")
     public void addArticleToMyList(String name_of_folder)
     {
         waitForElementAndClick(
@@ -76,6 +80,7 @@ abstract public class ArticlePageObject extends MainPageObject
 //                10
 //        );
 
+
         waitForElementAndSendKeys(
                 MY_LIST_NAME_INPUT,
                 name_of_folder,
@@ -96,6 +101,7 @@ abstract public class ArticlePageObject extends MainPageObject
         );
     }
 
+    @Step("Adding article to my saved")
     public void addArticlesToMySaved()
     {
         waitForElementAndClick(
@@ -105,6 +111,7 @@ abstract public class ArticlePageObject extends MainPageObject
         );
     }
 
+    @Step("Waiting for article to be saved")
     public void closeArticle()
     {
         waitForElementAndClick(

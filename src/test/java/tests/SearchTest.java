@@ -15,7 +15,7 @@ public class SearchTest extends CoreTestCase
         SearchPageObject.clickSkipButton();
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
-        SearchPageObject.waitForSearchResult("Java (programming language)");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
     }
 
     @Test
@@ -39,7 +39,7 @@ public class SearchTest extends CoreTestCase
         assertTrue(
                 amount_of_search_result > 0,
                 "We found too few results"
-                );
+        );
     }
 
     @Test
