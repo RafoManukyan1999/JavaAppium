@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Epic("Tests for articles")
 public class ArticleTests extends CoreTestCase
 {
-
     @Test
     @Features(value = {@Feature(value="Search"),@Feature(value="Article")})
     @DisplayName("Compare article title with expected title")
